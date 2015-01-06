@@ -1,14 +1,15 @@
 <?php
 
 class Human extends Characther {
-  // properties
 
   protected $name;
-  protected $strength = 60;
+  protected $strength = 50;
   protected $swordfighting = 75;
-  protected $
+  protected $defense = 30;
+  protected $agility = 50;
 
-  parent::__construct($name);
-
+  public function __construct($name) {
+    $this->name = $name;
+  }
 
 }

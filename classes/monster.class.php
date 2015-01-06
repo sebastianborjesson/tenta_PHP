@@ -1,14 +1,16 @@
 <?php
 
 class Monster extends Characther {
-  // properties
 
   protected $name;
-  protected $health = 100;
-  protected $level = 1;
-  protected $strength = 10;
+  protected $axefighting = 70;
+  protected $strength = 65;
+  protected $agility = 25;
+  protected $defense = 40;
 
-  parent::__construct($name);
+  public function __construct($name) {
+    $this->name = $name;
+  }
 
 
 

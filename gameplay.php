@@ -11,10 +11,5 @@ $ds = new DBObjectSaver(array(
 
 $players = &$ds->players;
 $gameplay = &$ds->gameplay;
-$story = &$ds->$story;
+$storyline = &$ds->$story;
 
-
-if (count(players) === 0) {
-	echo(json_encode(false));
-	exit();
-}

@@ -1,15 +1,16 @@
 <?php
 
 class Archer extends Characther {
-  // properties
 
   protected $name;
-  protected $level = 1;
   protected $strength = 30;
   protected $archery = 70;
   protected $agility = 60;
+  protected $swordfighting = 20;
 
-  parent::__construct($name);
+  public function __construct($name) {
+    $this->name = $name;
+  }
 
 
 }

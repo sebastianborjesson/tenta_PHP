@@ -4,10 +4,16 @@ class Tools extends Base {
   // properties
 
   protected $name;
-  protected
+  protected $owner = NULL;
+  protected $type;
+  protected $effect = array();
 
-  parent::__construct($name);
-
+  public function __construct(&$owner = NULL) {
+    if ($owner) {
+      $this->owner = $owner;
+      $this->owner->tool($this);
+    }
+  }
 
 
 }
