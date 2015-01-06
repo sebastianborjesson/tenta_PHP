@@ -188,7 +188,7 @@ class PDOHelper {
 // --------------------------------------------------------------
 
 /**
- * DBObjectSaver version 1.0
+ * DBObjectSaver version 1.0.1
  * Save and load class-based objects to db, 
  * Nodebite 2014, Thomas Frank
  *
@@ -315,7 +315,9 @@ class DbObjectSaver {
     $tables = $this->getTables();
     $mem = &$this->mem;
     foreach($tables as $table){
-      $tableContent = $this->dbh->query("SELECT * FROM ".$table);
+      $tableContent = $this->dbh->query(
+        "SELECT * FROM ".$table." ORDER BY _key/1"
+      );
       foreach($tableContent as $row){
         if($table == "default"){
           $mem[$row["_key"]] = unserialize($row["_value"]);

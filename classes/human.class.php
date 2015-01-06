@@ -1,13 +1,12 @@
 <?php
 
-class Hero extends Characther {
+class Human extends Characther {
   // properties
 
   protected $name;
-  protected $health = 100;
-  protected $level = 1;
   protected $strength = 60;
-  
+  protected $swordfighting = 75;
+  protected $
 
   parent::__construct($name);
 

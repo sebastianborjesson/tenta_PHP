@@ -13,4 +13,6 @@ class Character extends Base {
     $this->name = $name;
   }
 
+  
+
 }
