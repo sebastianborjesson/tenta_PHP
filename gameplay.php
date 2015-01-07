@@ -22,7 +22,7 @@ if (isset($_REQUEST["playerName"]) && isset($_REQUEST["playerClass"])) {
   $create_player = $_REQUEST["playerName"];
   $create_class = $_REQUEST["playerClass"];
 
-  $new_player = New $player_class($player_name);
+  $new_player = New $create_class($create_player);
   $players[] = &$new_player;
 
   } 

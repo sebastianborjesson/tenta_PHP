@@ -1,6 +1,6 @@
 <?php
 
-class Monster extends Characther {
+class Monster extends Character {
 
   public $name;
   public $axefighting = 70;
