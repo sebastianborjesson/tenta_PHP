@@ -8,3 +8,12 @@ $ds = new DBObjectSaver(array(
   "password" => "mysql",
   "prefix" => "wu14oop2"
 ));
+
+if (!count($ds->flubber)) {
+  echo("<br>created new monster!");
+  $sebastian = New Flubber("Sebastian");
+  $ds->flubber[] = $sebastian;
+} 
+else {
+  $sebastian = &$ds->flubber[0];
+}
