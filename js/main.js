@@ -2,17 +2,17 @@ $(function() {
 
 	$(".play").click(function(){
 		$.ajax({
-			url:gameplay.php,
-			datatype:"json",
+			url:"gameplay.php",
+			dataType:"json",
 			data: {
-				playerName: playerName,
-				playerClass: playerClass
+				playerName: "Archer",
+				playerClass: "Archer"
 			},
 			success: function(data) {
-				console.log("successfully stored character!");
+				console.log("successfully stored character!", data);
 			},
 			error: function(data) {
-				console.log("Hey! Something went wrong here!");
+				console.log("Hey! Something went wrong here!", data);
 			}
 		});
 	});
