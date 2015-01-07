@@ -22,10 +22,9 @@ $ds = new DBObjectSaver(array(
  */
 
 if (isset($_REQUEST["startOver"])) {
-  unset($ds->story);
   unset($ds->players);
-  unset($ds->chapters);
-  unset($ds->game_data);
+  unset($ds->computer_player);
+  unset($ds->gameplay);
 }
 
 echo(json_encode(true));

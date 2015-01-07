@@ -19,32 +19,6 @@ class Character extends Base {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // public function winTool() {
 
   // }

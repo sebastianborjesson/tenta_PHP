@@ -14,12 +14,13 @@ $computer_player = &$ds->computer_player;
 $gameplay = &$ds->gameplay;
 
 if (!isset($_REQUEST["create_player"])) {
+  //else store data in variables
+  $player_name = $_REQUEST["create_player"];
+  $player_class = $_REQUEST["create_class"];
+  } 
+else {
   //if not enough request data was recieved, exit script
   echo(json_encode(false));
   exit();
-  } 
-else {
-  //else store data in variables
-  $create_player = $_REQUEST["create_player"];
   }
 

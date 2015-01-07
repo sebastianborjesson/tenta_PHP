@@ -5,10 +5,19 @@
     <meta charset="utf-8">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/view.css">
   </head>
   <body>
-  	 <button id="play" type="button" value="Play">Play</button>
-  	 <button id="reset" type="button" value="Reset">Reset</button>
-  	 <button id="startOver" type="button" value="Start Over">Start over</button>
+  	<div>
+  		<p class="name">Type in your characters name: </p>
+	  	<input class="characterName" type="text">
+	  	<p class="classtype">Choose the type of character you want to play with: </p>
+	  	<p>Human</p><input class="charHuman" type="radio" name="human">
+	  	<p>Archer</p><input class="charArcher" type="radio" name="human">
+	  	<p>Monster</p><input class="charMonster" type="radio" name="human">
+	  	<button class="play" type="button" value="Play">Play</button>
+	  	<button class="reset" type="button" value="Reset">Reset</button>
+	  	<button class="startOver" type="button" value="Start Over">Start over</button>
+	</div>
   </body>
 </html>

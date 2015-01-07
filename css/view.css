@@ -1,0 +1,31 @@
+.characterName {
+	display: block;
+	margin-top: 10px;
+}
+
+.play {
+	display: block;
+	margin-top: 10px;
+}
+
+.reset {
+	display: block;
+	margin-top: 10px;
+}
+
+.startOver {
+	display: block;
+	margin-top: 10px;
+}
+
+.charHuman {
+	display: block;
+}
+
+.charArcher {
+	display: block;
+}
+
+.charMonster {
+	display: block;
+}
