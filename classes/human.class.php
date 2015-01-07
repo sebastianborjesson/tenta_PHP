@@ -2,14 +2,17 @@
 
 class Human extends Characther {
 
-  protected $name;
-  protected $strength = 50;
-  protected $swordfighting = 75;
-  protected $defense = 30;
-  protected $agility = 50;
+  public $name;
+  public $strength = 50;
+  public $swordfighting = 65;
+  public $defense = 30;
+  public $agility = 50;
 
-  public function __construct($name) {
-    $this->name = $name;
+  public function __construct(&$name) {
+
+    parent::__construct($name);
+
   }
+
 
 }

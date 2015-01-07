@@ -9,7 +9,29 @@ $ds = new DBObjectSaver(array(
   "prefix" => "wu14oop2"
 ));
 
+if(!isset($ds->players)) {
+  $ds->players = array();
+}
+
+if(!isset($ds->computer_player)) {
+  $ds->computer_player = array();
+}
+
+if(!isset($ds->gameplay)) {
+  $ds->gameplay = array();
+}
+
 $players = &$ds->players;
+$computer_player = &$ds->computer_player;
 $gameplay = &$ds->gameplay;
-$storyline = &$ds->$story;
+
+if (!isset($_REQUEST["create_player"])) {
+  //if not enough request data was recieved, exit script
+  echo(json_encode(false));
+  exit();
+  } 
+else {
+  //else store data in variables
+  $create_player = $_REQUEST["create_player"];
+  }
 
