@@ -8,12 +8,5 @@ class Monster extends Characther {
   public $agility = 25;
   public $defense = 40;
 
-  public function __construct(&$name) {
-    
-    parent::__construct($name);
-
-  }
-
-
 
 }

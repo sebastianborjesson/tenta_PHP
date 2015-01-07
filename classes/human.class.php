@@ -8,11 +8,5 @@ class Human extends Characther {
   public $defense = 30;
   public $agility = 50;
 
-  public function __construct(&$name) {
-
-    parent::__construct($name);
-
-  }
-
 
 }

@@ -8,7 +8,7 @@ class Character extends Base {
   public $success = 50;
   public $tools = array();
 
-  public function __construct(&$name) {
+  public function __construct($name) {
     $this->name = $name;
   }
 

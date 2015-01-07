@@ -8,11 +8,4 @@ class Archer extends Characther {
   public $agility = 60;
   public $swordfighting = 20;
 
-  public function __construct(&$name) {
-    
-    parent::__construct($name);
-
-  }
-
-
 }
