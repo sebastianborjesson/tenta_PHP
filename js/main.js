@@ -1,5 +1,6 @@
 $(function() {
 
+
 	$(".play").click(function(){
 		var playerClass = ($("input[type='radio']:checked").val());
 		$.ajax({
@@ -9,21 +10,11 @@ $(function() {
 				playerName: "playerName",
 				playerClass: playerClass
 			},
-			success: function(data) {
+			success: function(data){
 				console.log("successfully stored character!", data);
 			},
 			error: function(data) {
 				console.log("Hey! Something went wrong here!", data);
-			}
-		});
-	});
-
-	$(".reset").click(function(){
-		$.ajax({
-			url:"reset.php",
-			dataType: "json",
-			data: {
-				startOver:
 			}
 		});
 	});

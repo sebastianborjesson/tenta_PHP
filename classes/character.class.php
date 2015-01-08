@@ -15,37 +15,4 @@ class Character extends Base {
   public function __construct($name) {
     $this->name = $name;
   }
-
-  public function isAlive() {
-    
-    return $this->health > 0;
-    
-  }
-
-
-  // public function winTool() {
-
-  // }
-
-  // public function looseTool() {
-
-  // }
-
-  // public function acceptChallenge() {
-
-  // }
-
-  // public function changeChange() {
-
-  // }
-
-  // public function carryOutChallenge() {
-
-  // }
-
-  // public function carryOutChallengeWithCompanion() {
-
-  // }
-
-
 }
