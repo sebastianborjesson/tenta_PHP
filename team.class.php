@@ -6,7 +6,7 @@ class Team extends Character {
 
   //give team the same skills/strengths as player classes so we don't
   //have to change any existing code (winChances, playChallenge etc)
-   public $swordfighting;
+  public $swordfighting;
   public $archery;
   public $axefighting;
   public $defense;
