@@ -1,7 +1,7 @@
 $(function() {
-	var playerClass = console.log($("input[type='radio']:checked").val());
+
 	$(".play").click(function(){
-		console.log($("input[type='radio']:checked").val());
+		var playerClass = ($("input[type='radio']:checked").val());
 		$.ajax({
 			url:"gameplay.php",
 			dataType:"json",
@@ -14,6 +14,16 @@ $(function() {
 			},
 			error: function(data) {
 				console.log("Hey! Something went wrong here!", data);
+			}
+		});
+	});
+
+	$(".reset").click(function(){
+		$.ajax({
+			url:"reset.php",
+			dataType: "json",
+			data: {
+				startOver:
 			}
 		});
 	});

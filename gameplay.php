@@ -32,6 +32,23 @@ else {
   exit();
   }
 
-echo(json_encode($ds->players[0]));
+$all_classes = array("Archer", "Human", "Monster");
+$random_class = $create_class;
+while ($create_class == $random_class) {
+	$randomIndex = rand(0, count($all_classes) - 1);
+	$random_class = $all_classes[$randomIndex];
+}
+
+$computer_player[] = New $random_class("Bot1");
+
+$random_class2 = $random_class;
+while ($create_class == $random_class || $random_class2 == $random_class) {
+	$randomIndex = rand(0, count($all_classes) - 1);
+	$random_class = $all_classes[$randomIndex];
+}
+
+$computer_player[] = New $random_class("Bot2");
+
+echo(json_encode(array($ds->players, $ds->computer_player)));
 
 

@@ -1,6 +1,6 @@
 <?php
 
-class Human extends Characther {
+class Human extends Character {
 
   public $name;
   public $strength = 50;

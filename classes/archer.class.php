@@ -7,5 +7,6 @@ class Archer extends Character {
   public $archery = 70;
   public $agility = 60;
   public $swordfighting = 20;
+  public $defense = 35;
 
 }
