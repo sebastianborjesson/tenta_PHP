@@ -6,6 +6,8 @@ class Character extends Base {
   public $health = 100;
   public $level = 1;
   public $success = 50;
+  public $strength = 0;
+  public $agility = 0;
   public $swordfighting = 0;
   public $archery = 0;
   public $axefighting = 0;

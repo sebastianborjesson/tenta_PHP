@@ -13,15 +13,15 @@ class Team extends Character {
   public $tools;
 
   //not using references as no player property values will be affected
-  public function __construct($name, $humanPlayer, $computerPlayer) {
-    $this->members[] = $humanPlayer;
-    $this->members[] = $computerPlayer;
+  public function __construct($name, $players, $computer_player) {
+    $this->members[] = $players;
+    $this->members[] = $computer_player;
 
     // sum skill points of team members
-    $this->grillSkill = $humanPlayer->grillSkill + $computerPlayer->grillSkill;
-    $this->sauceSkill = $humanPlayer->sauceSkill + $computerPlayer->sauceSkill;
-    $this->boilSkill = $humanPlayer->boilSkill + $computerPlayer->boilSkill;
-    $this->desertSkill = $humanPlayer->desertSkill + $computerPlayer->desertSkill;
+    $this->swordfighting = $humanPlayer->swordfighting + $computerPlayer->swordfighting;
+    $this->archery = $humanPlayer->archery + $computerPlayer->archery;
+    $this->axefighting = $humanPlayer->axefighting + $computerPlayer->axefighting;
+    $this->defense = $humanPlayer->defense + $computerPlayer->defense;
 
     //how to add tools to a team
     $this->tools = $humanPlayer->tools;

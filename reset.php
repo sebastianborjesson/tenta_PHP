@@ -24,6 +24,7 @@ $ds = new DBObjectSaver(array(
 if (isset($_REQUEST["startOver"])) {
   unset($ds->players);
   unset($ds->computer_player);
+  unset($ds->tools);
   unset($ds->gameplay);
 }
 

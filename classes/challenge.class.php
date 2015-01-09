@@ -1,8 +1,8 @@
 <?php
 
 class Challenge {
-  protected $description;
-  protected $skills;
+  public $description;
+  public $skills;
   
   public function __construct($description,$skills){
     $this->description = $description;
