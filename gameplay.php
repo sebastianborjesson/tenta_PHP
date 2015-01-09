@@ -10,14 +10,8 @@ $ds = new DBObjectSaver(array(
 ));
 
 unset($ds->players);
-unset($ds->computer_player);
-unset($ds->tools);
-unset($ds->challenges);
 
 $players = &$ds->players;
-$computer_player = &$ds->computer_player;
-$tools = &$ds->tools;
-$challenges = &$ds->challenges;
 
 if (isset($_REQUEST["playerName"]) && isset($_REQUEST["playerClass"])) {
   //else store data in variables
@@ -34,22 +28,16 @@ else {
   exit();
   }
 
-if (isset($humanName)) {
-    $human = New Human($humanName);
-    $ds->players[] = &$human;
-    echo(json_encode($humanName));
-  }
-  else {
-    $humanName = array(
+  $humanName = $_POST['humanName'];
+
+  $humanName = array(
       "Arthur",
       "Oscar",
       "Knight"
     );
 
-    $humanName = &$humanName;
-    $random_human_name =  mt_rand(0,2);
-    $human = New Human($humanName[$random_human_name]); 
-  }
+    $random_human_name = mt_rand(0,2);
+    $human = New Human($humanName[$random_human_name]);
 
 $all_classes = array("Human", "Archer", "Monster");
 $random_class = $create_class;
@@ -58,8 +46,15 @@ while ($create_class == $random_class) {
 	$random_class = $all_classes[$randomIndex];
 }
 
+$humanName = array(
+      "Arthur",
+      "Oscar",
+      "Eddard"
+    );
 
-$computer_player[] = New $random_class ($humanName);
+    $random_human_name = mt_rand(0,2);
+    $computer_player[] = New $random_class($humanName[$random_human_name]);
+
 
 $random_class2 = $random_class;
 while ($create_class == $random_class || $random_class2 == $random_class) {
@@ -68,7 +63,14 @@ while ($create_class == $random_class || $random_class2 == $random_class) {
 }
 
 
-$computer_player[] = New $random_class("Bot2");
+$humanName = array(
+      "Joffrey",
+      "Tywin",
+      "Theon"
+    );
+
+    $random_human_name = mt_rand(0,2);
+    $computer_player[] = New $random_class2($humanName[$random_human_name]);
 
 
 
@@ -256,8 +258,8 @@ $challenges = array();
 		)
 	);
 
+//, $ds->computer_player, $ds->tools, $ds->challenges
 
-
-echo(json_encode(array($ds->players, $ds->computer_player, $ds->tools, $ds->challenges)));
+echo(json_encode(array($ds->players)));
 
 
