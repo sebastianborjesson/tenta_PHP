@@ -10,8 +10,14 @@ $ds = new DBObjectSaver(array(
 ));
 
 unset($ds->players);
+unset($ds->computer_player);
+unset($ds->tools);
+unset($ds->challenges);
 
 $players = &$ds->players;
+$computer_player = &$ds->computer_player;
+$tools = &$ds->tools;
+$challenges = &$ds->challenges;
 
 if (isset($_REQUEST["playerName"]) && isset($_REQUEST["playerClass"])) {
   //else store data in variables

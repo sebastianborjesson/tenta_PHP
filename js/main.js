@@ -15,9 +15,13 @@ $(function() {
 				$(".characterInfo").hide();
 				for (var i = 0; i < data.length; i++) {
 					for (var j = 0; j < data[i].length; j++) {
+
+						$(".selectNewChallenge").append("<h2>Welcome " + data[i][j].name + " to the game of masters!");
+						$(".selectNewChallenge").append("<p>Pick a challenge by accepting or hit pick new challenge if you want to change</p>");
+						$(".selectNewChallenge").append("<button class='accept_challenge' type=text>Accept challenge</button>");
+						$(".selectNewChallenge").append("<button class='pick_new_challenge' type=text>Pick new challenge");
 						
-				$(".selectNewChallenge").append("<h2>Welcome " + data[i][j].name + " to the game of masters!");
-				console.log("YAY! stored in database", data);
+						console.log("YAY! stored in database", data);
 					}
 				}
 			},
