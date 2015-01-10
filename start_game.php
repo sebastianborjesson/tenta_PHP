@@ -158,7 +158,10 @@ $challenges = array();
 			"strength" => 50,
 			"swordfighting" => 55,
 			"agility" => 40,
-			"defense" => 40
+			"defense" => 40,
+			"archery" => 0,
+			"axefighting" => 0,
+
 		)
 	);
 
@@ -170,7 +173,9 @@ $challenges = array();
 			"strength" => 50,
 			"archery" => 60,
 			"agility" => 20,
-			"defense" => 30
+			"defense" => 30,
+			"swordfighting" => 0,
+			"axefighting" => 0
 		)
 	);
 
@@ -182,7 +187,9 @@ $challenges = array();
 			"strength" => 45,
 			"axefighting" => 55,
 			"agility" => 40,
-			"defense" => 30
+			"defense" => 30,
+			"swordfighting" => 0,
+			"archery" => 0
 		)
 	);
 
@@ -193,7 +200,9 @@ $challenges = array();
 			"strength" => 85,
 			"swordfighting" => 70,
 			"agility" => 65,
-			"defense" => 30
+			"defense" => 30,
+			"archery" => 0,
+			"axefighting" => 0
 		)
 	);
 
@@ -204,7 +213,9 @@ $challenges = array();
 			"strength" => 80,
 			"swordfighting" => 65,
 			"agility" => 60,
-			"defense" => 30
+			"defense" => 30,
+			"archery" => 0,
+			"axefighting" => 0
 		)
 	);
 
@@ -217,7 +228,8 @@ $challenges = array();
 			"archery" => 55,
 			"swordfighting" => 50,
 			"agility" => 60,
-			"defense" => 60
+			"defense" => 60,
+			"axefighting" => 0
 		)
 	);
 
@@ -228,7 +240,9 @@ $challenges = array();
 			"strength" => 50,
 			"axefighting" => 50,
 			"agility" => 40,
-			"defense" => 30
+			"defense" => 30,
+			"archery" => 0,
+			"swordfighting" => 0
 		)
 	);
 
@@ -238,7 +252,9 @@ $challenges = array();
 			"strength" => 50,
 			"archery" => 55,
 			"agility" => 40,
-			"defense" => 30
+			"defense" => 30,
+			"swordfighting" => 0,
+			"axefighting" => 0
 		)
 	);
 
@@ -248,7 +264,9 @@ $challenges = array();
 			"strength" => 50,
 			"axefighting" => 55,
 			"agility" => 40,
-			"defense" => 30
+			"defense" => 30,
+			"swordfighting" => 0,
+			"archery" => 0
 		)
 	);
 
@@ -260,7 +278,9 @@ $challenges = array();
 			"strength" => 50,
 			"swordfighting" => 55,
 			"agility" => 40,
-			"defense" => 30
+			"defense" => 30,
+			"archery" => 0,
+			"axefighting" => 0
 		)
 	);
 
