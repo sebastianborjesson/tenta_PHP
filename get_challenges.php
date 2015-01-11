@@ -10,19 +10,19 @@ $ds = new DBObjectSaver(array(
   "prefix" => "wu14oop2"
 ));
 
-$latestChallenge = isset($_REQUEST["lastestChallenge"]) ? $_REQUEST["lastestChallenge"] : false;
+$latestChallenge = isset($_REQUEST["lastestChallenge"]);
 
 
-  $randomChallenge = $lastestChallenge;
-  while ($random_challenge_index == $last_challenge_index) {
-    $random_challenge_index = rand(0, count($ds->challenges)-1);
+  $randomChallenge = $latestChallenge;
+  while ($randomChallenge== $latestChallenge) {
+    $randomChallenge = rand(0, count($ds->challenges)-1);
   }
 
 //remove old challenge
-unset($ds->current_challenge);
+unset($ds->ongoing_challenge);
 
 //add the new one
-$ds->current_challenge[] = $ds->challenges[$random_challenge_index];
+$ds->ongoing_challenge[] = $ds->challenges[$randomChallenge];
 
 //and echo it out
-echo(json_encode($ds->current_challenge[0]));
+echo(json_encode($ds->ongoing_challenge[0]));

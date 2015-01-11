@@ -26,6 +26,7 @@ if (isset($_REQUEST["startOver"])) {
   unset($ds->computer_player);
   unset($ds->tools);
   unset($ds->challenges);
+  unset($ds->ongoing_challenge);
 }
 
 echo(json_encode(true));
