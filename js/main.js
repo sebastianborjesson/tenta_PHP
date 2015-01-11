@@ -43,8 +43,12 @@ $(function() {
 					acceptChallenge: 1
 				},
 				success: function(data) {
-					$(".selectNewChallenge").html("");
-					console.log("Carried out challenge", data.responseText);
+					$(".selectNewChallenge").hide();
+					for (var i in data.result) {
+						$(".playChallenge").append(data.result[i]);
+						$(".playChallenge").append("");
+						console.log("Carried out challenge", data.responseText);
+					}
 				},
 				error: function(data) {
 					console.log("Did not carry out challenge", data.responseText);
@@ -58,7 +62,7 @@ $(function() {
 				url: "get_challenges.php",
 				dataType: "json",
 				data: {
-					latestChallenge: 1
+					getChallenge: 1
 				},
 				success: function(data) {
 					$(".random").html("");

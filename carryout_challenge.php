@@ -9,13 +9,14 @@ $ds = new DBObjectSaver(array(
   "prefix" => "wu14oop2"
 ));
 
-$carryout_challenge = isset($_REQUEST["carryOutChallenge"]);
+$carryout_challenge = $_REQUEST["carryOutChallenge"];
 
-$new_player = $ds->players[0];
+$player = $ds->players[0];
 
+  
   //PLAY CHALLENGE
-  $result = $new_player->acceptChallenge($ds->ongoing_challenge[0], $ds->players);
-
+  $result = $player->acceptChallenge($ds->ongoing_challenge[0], $ds->players);
+  /*
   //who first etc.
   $winner = $result[0];
   $last = $result[count($result)-1];
@@ -23,11 +24,14 @@ $new_player = $ds->players[0];
   //winner gets 15 points
   $winner->success += 15;
 
-  /*
+
+  
   //third lose 5 points and a random tool
   $last->success -= 5;
+  /*
   $last->loseRandomTool($ds->available_tools);
   */
+  
   //data to echo back to frontend
 $echo_data = array(
   "result" => $result,

@@ -18,5 +18,8 @@ class Character extends Base {
     $this->name = $name;
   }
 
-  
+  public function acceptChallenge($challenge, $players) {
+    return $this->name. " accepted the challenge: ".$challenge->description."! ".
+    $this->name." now has to choose to do it on their own or in a team. "; 
+  }
 }

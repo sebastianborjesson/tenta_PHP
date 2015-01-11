@@ -10,7 +10,7 @@ $ds = new DBObjectSaver(array(
   "prefix" => "wu14oop2"
 ));
 
-$latestChallenge = isset($_REQUEST["lastestChallenge"]);
+$latestChallenge = $_REQUEST["getChallenge"];
 
 
   $randomChallenge = $latestChallenge;
