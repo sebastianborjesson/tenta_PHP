@@ -20,7 +20,7 @@ class Challenge extends Base {
       //by checking how many skillpoints the challenge requires
       $needed = $points;
       //and by checking how many skillpoints a person has
-      $has = $person->{$skill.'Skill'}; //grillSkill
+      $has = $person->{$skill}; //grillSkill
 
       //check if a person has any tools
       if (count($person->tools) > 0) {

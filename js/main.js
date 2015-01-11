@@ -22,11 +22,13 @@ $(function() {
 						$(".selectNewChallenge").append("<button class='accept_challenge'>Accept challenge</button>");
 						$(".selectNewChallenge").append("<button class='pick_new_challenge'>Pick new challenge");
 
-						$(".pick_new_challenge").on("click", pickNewChallenge);
-						$(".accept_challenge").on("click", acceptChallenge);
 						console.log("YAY! stored in database", data);
 					}
 				}
+						$(".pick_new_challenge").on("click", pickNewChallenge);
+						$(".accept_challenge").on("click", function() {
+							acceptChallenge(false);
+						});
 			},
 			error: function(data) {
 				console.log("Hey! Something went wrong here!", data);
@@ -34,22 +36,27 @@ $(function() {
 		});
 	});
 		
-		function acceptChallenge() {
+		function acceptChallenge(companion_no) {
 
 			$.ajax({
 				url: "carryout_challenge.php",
 				dataType: "json",
 				data: {
-					chosen_companion: 1
+					chosen_companion: companion_no
 				},
 				success: function(data) {
 					$(".selectNewChallenge").hide();
-					
-					for (var i in data.result) {
-						$(".playChallenge").append(data.result[i]);
-						$(".playChallenge").append("");
-						console.log("Carried out challenge", data.responseText);
+
+
+					for (var i in data.playing) {
+						$(".playChallenge").append(data.playing[i].name);
 					}
+					for (var j in data.result) {
+						$(".playChallenge").append(data.result[0]);
+						
+					}
+					$(".selectNewChallenge").append("<button class='pick_new_challenge'>Pick new challenge");
+						console.log("Carried out challenge", data);
 				},
 				error: function(data) {
 					console.log("Did not carry out challenge", data.responseText);
@@ -73,15 +80,6 @@ $(function() {
 					for (var i in data.skills) {
 						$(".selectNewChallenge").append("<p class='random'>"+i+": "+data.skills[i]+"</p>");
 					}
-					
-					/*
-					$(".selectNewChallenge").append("<p class='random'>Strength: " + data.skills.strength + "</p>");
-					$(".selectNewChallenge").append("<p class='random'>Agility: " + data.skills.agility + "</p>");
-					$(".selectNewChallenge").append("<p class='random'>Swordfighting: " + data.skills.swordfighting + "</p>");
-					$(".selectNewChallenge").append("<p class='random'>Archery: " + data.skills.archery + "</p>");
-					$(".selectNewChallenge").append("<p class='random'>Axefighting: " + data.skills.axefighting + "</p>");
-					$(".selectNewChallenge").append("<p class='random'>Defense: " + data.skills.defense + "</p>");
-					*/
 				},
 				error: function(data) {
 					console.log("It didnt work!", data.responseText);

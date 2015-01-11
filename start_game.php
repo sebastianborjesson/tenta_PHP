@@ -34,17 +34,6 @@ else {
   exit();
   }
 
-  $humanName = $_POST['humanName'];
-
-  $humanName = array(
-      "Arthur",
-      "Oscar",
-      "Knight"
-    );
-
-    $random_human_name = mt_rand(0,2);
-    $human = New Human($humanName[$random_human_name]);
-
 $all_classes = array("Human", "Archer", "Monster");
 $random_class = $create_class;
 while ($create_class == $random_class) {
@@ -65,7 +54,7 @@ $humanName = array(
 $random_class2 = $random_class;
 while ($create_class == $random_class || $random_class2 == $random_class) {
 	$randomIndex = rand(0, count($all_classes) - 1);
-	$random_class = $all_classes[$randomIndex];
+	$random_class2 = $all_classes[$randomIndex];
 }
 
 
@@ -208,7 +197,7 @@ $challenges = array();
 
 	$challenges[] = New Challenge(
 		"A firious dark-knight approaches, ".
-		"watch out for his attacks, he is strong.",
+		"watch out for his attacks, he is strong",
 		array(
 			"strength" => 80,
 			"swordfighting" => 65,

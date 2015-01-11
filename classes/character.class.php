@@ -17,13 +17,13 @@ class Character extends Base {
   public function __construct($name) {
     $this->name = $name;
   }
-  /*
+  
   public function acceptChallenge($challenge, $players) {
     return $this->name. " accepted the challenge: ".$challenge->description."! ".
     "<br>".
     $this->name." now has to choose to do it on their own or in a team. "; 
   }
-  */
+  
   public function carryOutChallenge($challenge, $players) {
     //find the winners and return them
     $result = array();

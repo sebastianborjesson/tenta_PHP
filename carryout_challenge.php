@@ -17,7 +17,7 @@ $computer_player = $ds->computer_player;
 
 if (isset($chosen_companion)) {
 
-	$chosen_companion = chosen_companion/1;
+	$chosen_companion = $chosen_companion/1;
 
 	$chosen_companion = $computer_player[$chosen_companion];
 

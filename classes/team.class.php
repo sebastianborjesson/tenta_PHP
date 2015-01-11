@@ -6,15 +6,15 @@ class Team extends Character {
 
   //give team the same skills/strengths as player classes so we don't
   //have to change any existing code (winChances, playChallenge etc)
-  public $swordfighting;
-  public $archery;
-  public $axefighting;
-  public $defense;
-  public $tools;
+  // public $swordfighting;
+  // public $archery;
+  // public $axefighting;
+  // public $defense;
+  // public $tools;
 
   //not using references as no player property values will be affected
-  public function __construct($name, $players, $computer_player) {
-    $this->members[] = $players;
+  public function __construct($name, $humanPlayer, $computer_player) {
+    $this->members[] = $humanPlayer;
     $this->members[] = $computer_player;
 
     // sum skill points of team members
