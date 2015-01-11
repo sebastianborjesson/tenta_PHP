@@ -33,17 +33,18 @@ $(function() {
 			}
 		});
 	});
-
+		
 		function acceptChallenge() {
 
 			$.ajax({
 				url: "carryout_challenge.php",
 				dataType: "json",
 				data: {
-					acceptChallenge: 1
+					chosen_companion: 1
 				},
 				success: function(data) {
 					$(".selectNewChallenge").hide();
+					
 					for (var i in data.result) {
 						$(".playChallenge").append(data.result[i]);
 						$(".playChallenge").append("");
@@ -55,6 +56,7 @@ $(function() {
 				}
 			});
 		}
+		
 
 		function pickNewChallenge() {
 

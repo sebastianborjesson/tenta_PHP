@@ -9,13 +9,33 @@ $ds = new DBObjectSaver(array(
   "prefix" => "wu14oop2"
 ));
 
-$carryout_challenge = $_REQUEST["carryOutChallenge"];
+$chosen_companion = $_REQUEST["chosen_companion"];
 
 $player = $ds->players[0];
 
+$computer_player = $ds->computer_player;
+
+if (isset($chosen_companion)) {
+
+	$chosen_companion = chosen_companion/1;
+
+	$chosen_companion = $computer_player[$chosen_companion];
+
+	$team = New Team ("Team", $player, $chosen_companion);
+
+	$opponent = $computer_player[1-$chosen_companion];
+
+	$members = array($team, $opponent);
+
+	$result = $player->carryOutChallenge($ds->ongoing_challenge[0], $members);
+
+} else {
+	$result = $player->carryOutChallenge($ds->ongoing_challenge[0], $ds->player);
+}
+
   
   //PLAY CHALLENGE
-  $result = $player->acceptChallenge($ds->ongoing_challenge[0], $ds->players);
+ // $result = $player->acceptChallenge($ds->ongoing_challenge[0], $ds->players);
   /*
   //who first etc.
   $winner = $result[0];
