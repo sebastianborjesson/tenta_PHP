@@ -9,6 +9,8 @@ $ds = new DBObjectSaver(array(
   "prefix" => "wu14oop2"
 ));
 
+
+
 $chosen_companion = $_REQUEST["chosen_companion"];
 
 $player = $ds->players[0];
@@ -30,15 +32,14 @@ if (isset($chosen_companion)) {
 	$result = $player->carryOutChallenge($ds->ongoing_challenge[0], $members);
 
 } else {
-	$result = $player->carryOutChallenge($ds->ongoing_challenge[0], $ds->player);
+	$members = array($player, $computer_player[0], $computer_player[1]);
+	$result = $player->carryOutChallenge($ds->ongoing_challenge[0], $members);
 }
 
   
-  //PLAY CHALLENGE
- // $result = $player->acceptChallenge($ds->ongoing_challenge[0], $ds->players);
-  /*
-  //who first etc.
+  
   $winner = $result[0];
+  
   $last = $result[count($result)-1];
 
   //winner gets 15 points
@@ -47,6 +48,7 @@ if (isset($chosen_companion)) {
 
   
   //third lose 5 points and a random tool
+  
   $last->success -= 5;
   /*
   $last->loseRandomTool($ds->available_tools);

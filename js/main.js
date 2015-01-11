@@ -27,7 +27,7 @@ $(function() {
 				}
 						$(".pick_new_challenge").on("click", pickNewChallenge);
 						$(".accept_challenge").on("click", function() {
-							acceptChallenge(false);
+							acceptChallenge();
 						});
 			},
 			error: function(data) {
@@ -49,13 +49,13 @@ $(function() {
 
 
 					for (var i in data.playing) {
-						$(".playChallenge").append(data.playing[i].name);
+						$(".playChallenge").append(data.playing[i]);
 					}
 					for (var j in data.result) {
-						$(".playChallenge").append(data.result[0]);
+						$(".playChallenge").append(data.result[j].name+"<br>");
+					$(".pick_new_challenge").on("click", pickNewChallenge);
 						
 					}
-					$(".selectNewChallenge").append("<button class='pick_new_challenge'>Pick new challenge");
 						console.log("Carried out challenge", data);
 				},
 				error: function(data) {
