@@ -45,17 +45,22 @@ $(function() {
 					chosen_companion: companion_no
 				},
 				success: function(data) {
-					$(".selectNewChallenge").hide();
+					$(".playChallenge").html(""+"<br>");
 
 
 					for (var i in data.playing) {
 						$(".playChallenge").append(data.playing[i]);
 					}
 					for (var j in data.result) {
-						$(".playChallenge").append(data.result[j].name+"<br>");
-					$(".pick_new_challenge").on("click", pickNewChallenge);
+						
+
 						
 					}
+						$(".playChallenge").append("The winner of the challenge is: "+data.result[0].name+" You gained 15 success points"+"<br>");
+						$(".playChallenge").append("Second place in this challenge is: "+data.result[1].name+" You gained nor lost any success points"+"<br>");
+						$(".playChallenge").append("The loser of the challenge is: "+data.result[2].name+" You lost 5 success points"+"<br>");
+
+
 						console.log("Carried out challenge", data);
 				},
 				error: function(data) {
